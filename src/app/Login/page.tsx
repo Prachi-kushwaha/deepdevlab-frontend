@@ -32,12 +32,12 @@ const Login: React.FC = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post(BASE_URL+"/login", formData, {
+      const res = await axios.post(BASE_URL + "/login", formData, {
         withCredentials: true,
       });
       dispatch(addUser(res.data));
-      router.push("/");
       console.log(res.data);
+      router.push("/");
     } catch (error) {
       console.error("Login failed:", error);
     }

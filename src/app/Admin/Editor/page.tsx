@@ -1,10 +1,15 @@
-import React from 'react'
-import Quill from 'quill'
+'use client';
 
-const Editor:React.FC = () => {
+import dynamic from 'next/dynamic';
+
+const TiptapEditor = dynamic(() => import('@/components/Tiptap'), {
+  ssr: false,
+});
+
+export default function Page() {
   return (
-    <div>Editor</div>
-  )
+    <main className="p-6">
+      <TiptapEditor />
+    </main>
+  );
 }
-
-export default Editor
